@@ -5,7 +5,7 @@ Various data regarding codons, bases, etc.
 __author__ = "Michael J. Harms"
 __date__ = "2019-05-31"
 
-import os
+import os, glob
 
 
 codons = {"TTT":"F","TTC":"F","TTA":"L","TTG":"L",
@@ -69,11 +69,13 @@ for c in list(codons.keys()):
 stop_codons = [k for k in list(gen_code.keys()) if aa_names[gen_code[k]] == "*"]
        
 # Create dictionary of recognizable built-in spectra
-built_in_spectra = {"published":"mutation_spectra/published.csv",
-                    "empirical":"mutation_spectra/empirical.csv",
-                    "flat":"mutation_spectra/flat.csv"} 
-
-# Append data path to this dictionary
 data_dir = os.path.split(os.path.realpath(__file__))[0]
-for b in built_in_spectra.keys():
-    built_in_spectra[b] = os.path.join(data_dir,built_in_spectra[b])
+spectra_dir = os.path.join(data_dir,"mutation_spectra")
+files = glob.glob("{}/*.csv".format(spectra_dir))
+print(spectra_dir,files)
+
+built_in_spectra = {}
+for f in files:
+    key = os.path.split(f)[1][:-4]
+    built_in_spectra[key] = f
+

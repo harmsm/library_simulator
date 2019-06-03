@@ -22,4 +22,6 @@ setup(name='library_simulator',
       download_url='https://github.com/harmslab/library_simulator/tarball/0.1',
       zip_safe=False,
       install_requires=["matplotlib","scipy","numpy"],
-      classifiers=['Programming Language :: Python'])
+      classifiers=['Programming Language :: Python'],
+      package_data={'': ['library_simulator/mutation_spectra/*.csv']},
+      include_package_data=True)

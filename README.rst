@@ -46,6 +46,7 @@ Installation
 ============
 
 .. code:: python
+
     pip install library_simulator
 
 
