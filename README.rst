@@ -9,6 +9,7 @@ Examples
 ========
 
 Create a library
+----------------
 
 .. code:: python
 
@@ -28,6 +29,7 @@ Create a library
 - **start**: whether or not the real start codon was messed up
 
 Find the frequencies of classes of mutants versus mutation rate
+---------------------------------------------------------------
 
 .. code:: python
 
