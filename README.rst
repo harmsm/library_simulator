@@ -28,6 +28,14 @@ Key
 - **stop**: whether or not there is new stop codon
 - **start**: whether or not the real start codon was messed up
 
+.. code:: python
+    from library_simulator import LibrarySimulator, util
+    lib = LibrarySimulator("example.fasta",mutation_spectrum="published")
+    f_v_r = util.freq_vs_mutation_rate(lib,num_samples=10000)
+    util.plot_freq_vs_mutation_rate(f_v_r)
+
+.. image:: example/mutation-rate.png
+
 Installation
 ============
 
