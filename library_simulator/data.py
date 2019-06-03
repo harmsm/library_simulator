@@ -72,7 +72,6 @@ stop_codons = [k for k in list(gen_code.keys()) if aa_names[gen_code[k]] == "*"]
 data_dir = os.path.split(os.path.realpath(__file__))[0]
 spectra_dir = os.path.join(data_dir,"mutation_spectra")
 files = glob.glob("{}/*.csv".format(spectra_dir))
-print(spectra_dir,files)
 
 built_in_spectra = {}
 for f in files:
