@@ -8,7 +8,10 @@ libraries given a nucleotide sequence and error-prone polymerase.
 Examples
 ========
 
+Create a library
+
 .. code:: python
+
     from library_simulator import LibrarySimulator
     lib = LibrarySimulator("example.fasta",mutation_spectrum="published")
     lib.simulate(num_samples=10,mutation_rate=2)
@@ -16,10 +19,6 @@ Examples
 
 .. image:: example/output-table.png
 
-See :code:`example/examples.ipynb` for more functionality.
-
-Key
----
 - **aa**: amino acid changes (:code:`*`: new stop codon)
 - **base**: base changes (:code:`-` and :code:`+` are insertions and deletions)
 - **num**: total number of amino acid changes (could be a huge number if there is
@@ -28,13 +27,18 @@ Key
 - **stop**: whether or not there is new stop codon
 - **start**: whether or not the real start codon was messed up
 
+Find the frequencies of classes of mutants versus mutation rate
+
 .. code:: python
+
     from library_simulator import LibrarySimulator, util
     lib = LibrarySimulator("example.fasta",mutation_spectrum="published")
     f_v_r = util.freq_vs_mutation_rate(lib,num_samples=10000)
     util.plot_freq_vs_mutation_rate(f_v_r)
 
 .. image:: example/mutation-rate.png
+
+See :code:`example/examples.ipynb` for more functionality.
 
 Installation
 ============
